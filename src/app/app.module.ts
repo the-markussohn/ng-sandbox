@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {LOCALE_ID, NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
 import localeEnGb from '@angular/common/locales/en-GB';
 
 import {AppComponent} from './app.component';
@@ -18,7 +19,8 @@ registerLocaleData(localeEnGb);
     NavbarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'en-GB'}
