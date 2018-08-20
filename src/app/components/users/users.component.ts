@@ -11,60 +11,55 @@ export class UsersComponent implements OnInit {
   users: User[];
   showExtended = true;
   loaded: boolean;
-  enableAdd = false;
+  enableAdd = true;
 
   constructor() {
   }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.users = [
-        {
-          firstName: 'John',
-          lastName: 'Smith',
-          age: 30,
-          address: {
-            street: '50 Main st',
-            city: 'Boston',
-            state: 'MA'
-          },
-          image: 'https://picsum.photos/300/300/?image=44'
+    this.users = [
+      {
+        firstName: 'John',
+        lastName: 'Smith',
+        age: 30,
+        address: {
+          street: '50 Main st',
+          city: 'Boston',
+          state: 'MA'
         },
-        {
-          firstName: 'Kevin',
-          lastName: 'Johnson',
-          age: 36,
-          address: {
-            street: '20 School st',
-            city: 'Lynn',
-            state: 'MA'
-          },
-          image: 'http://picsum.photos/300/300/?image=33'
+        isActive: true,
+        registered: new Date('01/02/2018 08:30:00')
+      },
+      {
+        firstName: 'Kevin',
+        lastName: 'Johnson',
+        age: 36,
+        address: {
+          street: '20 School st',
+          city: 'Lynn',
+          state: 'MA'
         },
-        {
-          firstName: 'Karen',
-          lastName: 'Brooks',
-          age: 29,
-          address: {
-            street: '55 Mill st',
-            city: 'Miami',
-            state: 'FL'
-          },
-          image: 'http://picsum.photos/300/300/?image=3'
-        }
-      ];
+        isActive: false,
+        registered: new Date('05/11/2015 05:30:00')
+      },
+      {
+        firstName: 'Karen',
+        lastName: 'Brooks',
+        age: 29,
+        address: {
+          street: '55 Mill st',
+          city: 'Miami',
+          state: 'FL'
+        },
+        isActive: true,
+        registered: new Date('08/02/2015 08:30:00')
+      }
+    ];
 
-      this.loaded = true;
-
-      this.addUser({
-        firstName: 'David',
-        lastName: 'Lynch'
-      });
-    }, 2000);
+    this.loaded = true;
   }
 
   addUser(user: User) {
     this.users.push(user);
   }
-
 }
