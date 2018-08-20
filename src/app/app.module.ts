@@ -8,6 +8,7 @@ import {UserComponent} from './components/user/user.component';
 import {UsersComponent} from './components/users/users.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {registerLocaleData} from '@angular/common';
+import {DataService} from './services/data.service';
 
 registerLocaleData(localeEnGb);
 
@@ -23,7 +24,8 @@ registerLocaleData(localeEnGb);
     FormsModule
   ],
   providers: [
-    {provide: LOCALE_ID, useValue: 'en-GB'}
+    {provide: LOCALE_ID, useValue: 'en-GB'},
+    DataService
   ],
   bootstrap: [AppComponent]
 })
