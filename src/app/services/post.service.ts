@@ -33,4 +33,9 @@ export class PostService {
     const url = `${this.postsUrl}/${id}`;
     return this._http.delete<Post>(url, httpOptions);
   }
+
+  getPost(id: number) {
+    const url = `${this.postsUrl}/${id}`;
+    return this._http.get<Post>(url);
+  }
 }
